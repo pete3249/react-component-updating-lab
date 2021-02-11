@@ -3,7 +3,6 @@ import React, { Component } from 'react';
 import Timer from './Timer'
 import Controls from './Controls'
 
-//no need to modify anything in this component
 class App extends Component {
 
   state = {
@@ -11,6 +10,7 @@ class App extends Component {
     timerIDs: []
   }
 
+  // calls method to add one intitial timer
   componentDidMount() {
     this.handleAddTimer()
   }
@@ -33,7 +33,6 @@ class App extends Component {
 
   // returns array of components written in JSX, mapped from this.state.timerIDs
   renderTimers = () => this.state.timerIDs.map(({id, updateInterval}) => <Timer key={id} id={id} removeTimer={this.removeTimer} updateInterval={updateInterval}/>)
-
 
   // adds a random number for timer ID
   handleAddTimer = () => {
@@ -63,7 +62,6 @@ class App extends Component {
       }
     })
   }
-
 }
 
 export default App;
